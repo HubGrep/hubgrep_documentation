@@ -1,8 +1,8 @@
-## Deployment
+# Deployment
 
-### Setup (Docker)
+## Setup (Docker)
 
-#### Creating your configuration
+### Creating your configuration
 
 Create a config by copying `.env.dist` to `.env` and add the missing values.
 
@@ -16,7 +16,7 @@ Also, it might be a good idea to make a copy of this dockerfile, so that you don
 versions of this repo.
 
 
-#### First start
+### First start
 
 To build an image with generated assets and source code baked in, 
 run:
@@ -49,7 +49,7 @@ the second one creates an admin user as defined in the environment variables.
 Afterwards, the service should be accessible on `http://yourip:8080`.
 
 
-#### Adding service-hosters 
+### Adding service-hosters 
 
 Add hosting-services to enable HubGrep to search for results. Use either the web-frontend 
 or the CLI. Hosting-services are tied to the current user while adding them; CLI always uses admin while web-frontend requires a login.
@@ -63,7 +63,7 @@ Adding via CLI (from within container shell):
 (For gitlab, see [Adding Gitlab Instances](#adding-gitlab-instances))
 
 
-#### Nginx setup
+### Nginx setup
 
 You likely want to serve via web-server, not with gunicorn (which serves the app, unless changed in the docker-compose file). 
 
@@ -78,13 +78,13 @@ Alternatively, you can run `flask cli copy-static /some/path` inside the contain
 You can find an example nginx config [here](./nginx_example.conf).
 
 
-#### Customizing the About Page
+### Customizing the About Page
 
 Set environment variable `HUBGREP_ABOUT_MARKDOWN_FILE` to a path containing a markdown file,
 and it will be rendered into the about page.
 
 
-#### Adding Gitlab Instances
+### Adding Gitlab Instances
 
 Gitlab needs an api key ("token") to use the api.
 

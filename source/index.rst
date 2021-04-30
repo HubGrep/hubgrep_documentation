@@ -28,6 +28,7 @@ Content
    docs/environment_variables
    docs/development
    docs/translating
+   docs/API
    :maxdepth: 2
 
 

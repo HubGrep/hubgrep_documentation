@@ -63,4 +63,11 @@ The following environment vars are passed to Flask-Mail.
 **HUBGREP_MAIL_MAX_EMAILS**
 
 
+## Contact in about page
 
+used for online contact information - all optional (default `None`)
+
+**HUBGREP_CONTACT_DESCRIPTION**
+**HUBGREP_CONTACT_ADDRESS**
+**HUBGREP_CONTACT_EMAIL**
+**HUBGREP_CONTACT_PHONE**
