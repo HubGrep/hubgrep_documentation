@@ -1,5 +1,3 @@
 [submodule "hubgrep_search"]
 	path = hubgrep_search
-	url = git@github.com:HubGrep/hubgrep_search.git
-[submodule "hubgrep_search/"]
 	url = https://github.com/HubGrep/hubgrep_search.git
