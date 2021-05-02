@@ -9,7 +9,10 @@ To clone it, run
 
     git submodule update --init --recursive
 
-(yea, working with submodules is a bit ugly, but readthedocs will do it automatically...)
+Working with submodules is a bit ugly, but readthedocs will do it automatically...
+
+> All instructions are meant for use in the project root, you never need to enter that submodule.
+
 
 ### Installing the requirements
 
