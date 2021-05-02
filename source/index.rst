@@ -24,6 +24,7 @@ Content
 -------
 
 .. toctree::
+   docs/add_to_browser
    docs/deployment
    docs/environment_variables
    docs/development

@@ -1,13 +1,36 @@
 # HubGrep Documentation
 
-## building locally
+## building the docs locally
 
-this needs sphinx and sphinx-autobuild.
+### Cloning hubgrep_search
 
-to run a watcher, updating when something changes, run
+`hubgrep_search` is added as a submodule to this repo.
+To clone it, run
+
+    git submodule update --init --recursive
+
+Working with submodules is a bit ugly, but readthedocs will do it automatically...
+
+> All instructions are meant for use in the project root, you never need to enter that submodule.
+
+
+### Installing the requirements
+
+When you have the submodule, make a new virtualenvironment (eg. with `python venv env`),
+and install the documentation requirements and the projects requirements.
+(This is needed, because all modules are actually imported to get their docstrings)
+
+    pip install -r requirements.txt
+    pip install -r hubgrep_search/requirements.txt
+
+
+### Running a build
+
+If you just want a single local build, just run `make html`. 
+
+To start a watcher updating when something changes, run
 
     sphinx-autobuild source build/html
 
 this will start a webserver at <http://localhost:8000>
-
 
