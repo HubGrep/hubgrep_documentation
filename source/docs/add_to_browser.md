@@ -40,8 +40,9 @@ Open the settings and go to "Search engine" in the menu on the left.
 In that category, click "Manage search engines".
 Click the "Add" button to add a new search engine.
 
-The URL should looke like `https://hubgrep.io/?s=%s`.
+The URL should look like `https://hubgrep.io/?s=%s`.
 
+> If you have visited HubGrep before, check if it already exists before adding another!
 
 ```{image} ../_static/hubgrep_default_chromium0.png
 :alt: afterwards search by prefixing the search string in the addressbar with the Keyword
