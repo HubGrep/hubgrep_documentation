@@ -16,7 +16,7 @@ try it out: `<https://hubgrep.io>`_!
 Links
 -----
 
-| the HubGrep project on `github <https://github.com/HubGrep)>`_
+| the HubGrep project on `github <https://github.com/HubGrep>`_
 | the `development blog <https://blog.hubgrep.io>`_, with updates (at least) every two weeks
 
 
@@ -24,14 +24,8 @@ Content
 -------
 
 .. toctree::
-   docs/add_to_browser
-   docs/deployment
-   docs/environment_variables
-   docs/development
-   docs/translating
-   docs/API
+   docs/hubgrep_search/index
    :maxdepth: 2
-
 
 
 Indices and tables

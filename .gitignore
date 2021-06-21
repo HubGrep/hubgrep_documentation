@@ -1,3 +1,5 @@
 env/
 build/
-source/docs/api/
+source/docs/hubgrep_search/development/api/
+source/docs/hubgrep_indexer/development/api/
+source/docs/hubgrep_crawlers/development/api/
