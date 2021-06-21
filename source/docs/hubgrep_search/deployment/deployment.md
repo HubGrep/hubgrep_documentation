@@ -4,7 +4,7 @@
 ## Creating your configuration
 
 Create a config by copying `.env.dist` to `.env` and add the missing values.
-(You can check [Environment Variables](environment_variables), but it should be mostly self-explaining)
+You can check [Environment Variables](environment_variables), but it should be mostly self-explanatory.
 
 Next, there is a `docker-compose.prod.yml` file, which would start an instance of HubGrep. 
 It contains redis db for caching, and postgres to store user data such as service-hosters which have been added.
