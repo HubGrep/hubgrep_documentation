@@ -6,7 +6,7 @@
 Go to [hubgrep.io](https://hubgrep.io), and right click in the search field.
 In the menu that pops up, click "Add a Keyword for this Search..."
 
-```{image} ../_static/hubgrep_default_firefox0.png
+```{image} /_static/hubgrep_default_firefox0.png
 :alt: a right click in the search field opens a menu containing "Add a Keyword for this search"
 :class: bg-primary
 :width: 500px
@@ -15,7 +15,7 @@ In the menu that pops up, click "Add a Keyword for this Search..."
 
 This opens a window to to add this as a bookmark. The keyword triggers your search later.
 
-```{image} ../_static/hubgrep_default_firefox1.png
+```{image} /_static/hubgrep_default_firefox1.png
 :alt: in the "New Bookmark" window, add the keyword you want to use
 :class: bg-primary
 :width: 500px
@@ -24,7 +24,7 @@ This opens a window to to add this as a bookmark. The keyword triggers your sear
 
 Afterwards, you can search by typing the keyword, followed by the query, in the addressbar!
 
-```{image} ../_static/hubgrep_default_firefox2.png
+```{image} /_static/hubgrep_default_firefox2.png
 :alt: afterwards search by prefixing the search string in the addressbar with the Keyword
 :class: bg-primary
 :width: 500px
@@ -44,7 +44,7 @@ The URL should look like `https://hubgrep.io/?s=%s`.
 
 > If you have visited HubGrep before, check if it already exists before adding another!
 
-```{image} ../_static/hubgrep_default_chromium0.png
+```{image} /_static/hubgrep_default_chromium0.png
 :alt: afterwards search by prefixing the search string in the addressbar with the Keyword
 :class: bg-primary
 :width: 500px
@@ -53,7 +53,7 @@ The URL should look like `https://hubgrep.io/?s=%s`.
 
 Afterwards, same as Firefox: search by typing the keyword followed by the query in the address bar.
 
-```{image} ../_static/hubgrep_default_chromium1.png
+```{image} /_static/hubgrep_default_chromium1.png
 :alt: afterwards search by prefixing the search string in the addressbar with the Keyword
 :class: bg-primary
 :width: 500px
@@ -83,7 +83,7 @@ c.url.searchengines = {
 After restarting qutebrowser, you will get the search autocompletion in the `:open` dialog! (The one thats also triggered with `O`!) 
 
 
-```{image} ../_static/hubgrep_default_qutebrowser.png
+```{image} /_static/hubgrep_default_qutebrowser.png
 :alt: afterwards search by prefixing the search string in the addressbar with the Keyword
 :class: bg-primary
 :width: 500px

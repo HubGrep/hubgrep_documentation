@@ -1,3 +1,9 @@
 [submodule "hubgrep_search"]
 	path = hubgrep_search
 	url = https://github.com/HubGrep/hubgrep_search.git
+[submodule "hubgrep_crawlers"]
+	path = hubgrep_crawlers
+	url = https://github.com/HubGrep/hubgrep_crawlers.git
+[submodule "hubgrep_indexer"]
+	path = hubgrep_indexer
+	url = https://github.com/HubGrep/hubgrep_indexer.git

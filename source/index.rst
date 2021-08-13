@@ -27,6 +27,14 @@ Content
    docs/hubgrep_search/index
    :maxdepth: 2
 
+.. toctree::
+   docs/hubgrep_indexer/index
+   :maxdepth: 2
+
+.. toctree::
+   docs/hubgrep_crawlers/index
+   :maxdepth: 2
+
 
 Indices and tables
 ==================
