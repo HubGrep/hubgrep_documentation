@@ -16,8 +16,8 @@ sys.path.insert(0, os.path.abspath('../hubgrep_search/'))
 
 from sphinx.ext.apidoc import main
 main(['-e', '-o', 'docs/hubgrep_search/development/api', '../hubgrep_search/hubgrep', '--force'])
-#main(['-e', '-o', 'docs/hubgrep_indexer/development/api', '../hubgrep_indexer/hubgrep_indexer', '--force'])
-#main(['-e', '-o', 'docs/hubgrep_crawlers/development/api', '../hubgrep_crawlers/crawlers', '--force'])
+main(['-e', '-o', 'docs/hubgrep_indexer/development/api', '../hubgrep_indexer/hubgrep_indexer', '--force'])
+main(['-e', '-o', 'docs/hubgrep_crawlers/development/api', '../hubgrep_crawlers/crawlers', '--force'])
 
 # -- Project information -----------------------------------------------------
 
