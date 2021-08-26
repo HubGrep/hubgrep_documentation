@@ -1,6 +1,14 @@
 
 # Setup (Docker)
 
+## Hardware requirements
+
+Hubgrep.io currently runs on a vServer with two cores and 8GB Ram, and uses about 60GB disk space - but since it needs to update the search index, it needs at least twice as much disc space.
+These are pretty much the minimum specs if you want to host a copy of a search index of all of gitubs public repositories (about 180 million in august 2021.)
+
+To run a search index only containing everything else, a raspberry should be fine.
+
+
 ## Creating your configuration
 
 Create a config by copying `.env.dist` to `.env` and add the missing values.
@@ -18,21 +26,34 @@ versions of this repo.
 
 ## First start
 
-To build an image with generated assets and source code baked in, 
-run:
+On the first start you need to run 
+
+    ./search_init.sh
+
+This will spin up postgres, initialize the database, fetches a copy of the data needed to create the search index - and creates the first search index!
+After the script is finished, you should have hubgrep running on port `8080`, you you didnt change anything.
+
+## Updating the search index
+
+To update the search index, run
+
+    ./search_update.sh
+
+This will essentially do the same thing as `./search_init.sh`, but skips database initialization, and builds a second index while the first one is still up and working.
+When finished, it rotates the indexes and discards the old one, minimizing the downtime.
+
+
+## Updating to a new version
+
+To build a new version of the docker image, you need to run
 
     docker-compose -f docker-compose.prod.yml build
+    # or
+    docker-compose -f docker-compose.prod.yml up -d --build
   
-Note: This is not needed the first time you start,
-but to trigger building the container after an update to a new version this is neccessary.
+Note: This is not needed the first time you start, but to trigger building the container after an update to a new version this is neccessary.
 
-To start the containers (HubGrep and needed services), run
-
-    docker-compose -f docker-compose.prod.yml up
-
-(or add a `-d` to detach).
-
-On first setup, you need to setup the database and the admin user.
+After an update it might be neccessary to update the database structure.
 Easiest is, to run a new shell in the container:
 
     docker-compose -f docker-compose.prod.yml run --rm service /bin/bash
@@ -40,27 +61,19 @@ Easiest is, to run a new shell in the container:
 and in there, run:
 
     flask db upgrade
-    flask cli init
 
-The first command migrates the database (creating the database structure that we use), 
-the second one creates an admin user as defined in the environment variables.
+Which migrates the database, making it usable for the current version of HubGrep.
 
+
+## Starting the containers
+
+To start the containers (HubGrep and needed services), run
+
+    docker-compose -f docker-compose.prod.yml up
+
+(or add a `-d` to detach).
 
 Afterwards, the service should be accessible on `http://yourip:8080`.
-
-
-## Adding service-hosters 
-
-Add hosting-services to enable HubGrep to search for results. Use either the web-frontend 
-or the CLI. Hosting-services are tied to the current user while adding them; CLI always uses admin while web-frontend requires a login.
- 
-Adding via CLI (from within container shell):
-
-    flask cli add-hoster github "https://api.github.com/" "https://github.com/" "{}"
-    flask cli add-hoster gitea "https://codeberg.org/api/v1/" "https://codeberg.org/" "{}"
-    flask cli add-hoster gitea "https://gitea.com/api/v1/" "https://gitea.com/" "{}"
-
-(For gitlab, see [Adding Gitlab Instances](#adding-gitlab-instances))
 
 
 ## Nginx setup
@@ -69,9 +82,8 @@ You likely want to serve via web-server, not with gunicorn (which serves the app
 
 We recommended you do this so that you can add a certificate for https, and serve assets more efficiently. 
 
-To get the static files, there is an example setup in `docker-compose.prod.yml` already.
-Just uncomment the "volumes" section in the compose file, and the `STATIC_PATH` in your `.env`.
-This would copy the static files to `./host_static` on startup.
+If you use the `docker-compose.prod.yml` file, there is already something set up:
+On startup, it links the built assets to `./static` on the host, so you can set up your webserver to serve from there.
 
 Alternatively, you can run `flask cli copy-static /some/path` inside the container.
 

@@ -15,28 +15,15 @@ The salt for the user passwords.
 Used for signing the session cookie when logged in.  
 (see <https://flask.palletsprojects.com/en/1.1.x/config/#SECRET_KEY>)
 
-**HUBGREP_HOSTING_SERVICE_REQUEST_TIMEOUT** (default `2`)
-Timeout used for requests to Hosting Services.  
-Setting `2` means two seconds of time until connection is established, and then two seconds to read the content, so you end up at a maximum of four seconds before timeout.  
-(see <https://docs.python-requests.org/en/master/user/advanced/#timeouts>)
-
 **HUBGREP_ABOUT_MARKDOWN_FILE**  (default `"hubgrep_about.md"`)  
 Path to a markdown file to use as the about page.
 
+**HUBGREP_INDEXER_URL**  (default `https://indexer.hubgrep.io/`)  
+Domain of the indexer, to fetch updates for your local search index.
+In case the indexer is down, we usually have a fairly recent copy of the data at `https://indexer.hubgrep.io/dummydata`
 
-## Cache
-
-**HUBGREP_CACHE_BACKEND**   (default `None`)  
-The cache backend used to store the Hosting Service responses.  
-Possible values are `'none'`, `'redis'` and `'memory'`.  
-In case of 'redis', HUBGREP_REDIS_URL needs to be set.
-
-**HUBGREP_CACHE_TIME**  (default `3600`)  
-Amount of seconds to cache the Hosting Service responses.
-
-**HUBGREP_REDIS_URL** (default `None`)  
-Redis URL to use.  
-Accepts `redis-py` URLs (see <https://redis-py.readthedocs.io/en/stable/#redis.ConnectionPool.from_url>)
+**HUBGREP_MANTICORE_HOST**  (default `manticore`)
+The servername of manticore, out search backend.
 
 
 ## Mail
