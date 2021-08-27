@@ -43,7 +43,7 @@ This will essentially do the same thing as `./search_init.sh`, but skips databas
 When finished, it rotates the indexes and discards the old one, minimizing the downtime.
 
 
-## Updating to a new version
+## Updating to a new version of hubgrep_search
 
 To build a new version of the docker image, you need to run
 
@@ -51,10 +51,10 @@ To build a new version of the docker image, you need to run
     # or
     docker-compose -f docker-compose.prod.yml up -d --build
   
-Note: This is not needed the first time you start, but to trigger building the container after an update to a new version this is neccessary.
+Note: This is not needed the first time you start, but re-building the container after an update to a new version can be neccessary.
 
-After an update it might be neccessary to update the database structure.
-Easiest is, to run a new shell in the container:
+After may also be neccessary to update the database structure. You can tell in advance if the directory `/migrations/versions` contain new files.
+A quick way to update is through a new shell in the container:
 
     docker-compose -f docker-compose.prod.yml run --rm service /bin/bash
 
@@ -62,7 +62,7 @@ and in there, run:
 
     flask db upgrade
 
-Which migrates the database, making it usable for the current version of HubGrep.
+This will migrate the database, making it usable for the current version of HubGrep.
 
 
 ## Starting the containers
