@@ -23,7 +23,7 @@ Domain of the indexer, to fetch updates for your local search index.
 In case the indexer is down, we usually have a fairly recent copy of the data at `https://indexer.hubgrep.io/dummydata`
 
 **HUBGREP_MANTICORE_HOST**  (default `manticore`)
-The servername of manticore, out search backend.
+The servername of manticore, our search backend.
 
 
 ## Mail
