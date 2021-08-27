@@ -1,6 +1,6 @@
 # Search syntax cheatsheet
 
-We are using [manticore]() as a search backend, and it has some nice functions to write you queries.
+We are using [manticore]() as a search backend, and it has some nice functions to write your queries.
 for a complete list, check out the section in the [manticore manual](https://manual.manticoresearch.com/References#Full-text-search-operators)!
 
 ## Searching in specific fields
@@ -41,7 +41,7 @@ Note that without parenthesis it would be interpreted as `(wonderland|looking) g
 
 ### Maybe-operator
 
-If wonderland is in results, it influences the score, if not its ignored (has to be uppercase!)
+If "wonderland" is in results, it influences the score (has to be uppercase!). Results containing "wonderland" but not "alice" will not match, however.
 
     alice MAYBE wonderland
 
