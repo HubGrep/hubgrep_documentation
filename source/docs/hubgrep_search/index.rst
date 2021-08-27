@@ -6,6 +6,7 @@ Usage
 
 .. toctree::
     usage/add_to_browser
+    usage/search_syntax
     :maxdepth: 2
 
 Deployment
