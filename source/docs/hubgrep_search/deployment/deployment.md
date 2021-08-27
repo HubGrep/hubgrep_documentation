@@ -31,7 +31,7 @@ On the first start you need to run
     ./search_init.sh
 
 This will spin up postgres, initialize the database, fetches a copy of the data needed to create the search index - and creates the first search index!
-After the script is finished, you should have hubgrep running on port `8080`, you you didnt change anything.
+After the script is finished, you should have hubgrep running on port `8080`, you didnt change anything.
 
 ## Updating the search index
 
